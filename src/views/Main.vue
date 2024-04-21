@@ -1,7 +1,8 @@
 <template>
   <div class="main_screen">
     <div class="grid grid-cols-5">
-      <div class="col-span-4 grid grid-cols-2 justify-items-center p-2">
+      <div class="col-span-4 grid grid-cols-3 justify-items-center p-2">
+        <shutter_release class="w-40 bg-gray-800 p-4 rounded" />
         <input_audio class="w-40 bg-gray-800 p-4 rounded" />
         <assist_tools class="w-40 bg-gray-800 p-4 rounded" />
       </div>
@@ -18,11 +19,11 @@
       <end class="w-40 bg-gray-800 p-4 rounded" />
     </div>
     <div class="grid grid-cols-5 justify-items-center p-2">
-      <fps class="w-32 bg-gray-800 p-4 rounded" />
-      <vfr class="w-32 bg-gray-800 p-4 rounded" />
       <codec class="w-32 bg-gray-800 p-4 rounded" />
       <image_ class="w-32 bg-gray-800 p-4 rounded" />
       <resolution class="w-32 bg-gray-800 p-4 rounded" />
+      <fps class="w-32 bg-gray-800 p-4 rounded" />
+      <vfr class="w-32 bg-gray-800 p-4 rounded" />
     </div>
     <div class="grid grid-cols-3 justify-items-center p-2">
       <card_space class="w-48 bg-gray-800 p-4 rounded" />
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import ShutterReleaseMainMenu from './Still/MainMenu.vue'
 import InputAudioMainMenu from './InputAudio/MainMenu.vue'
 import AssistToolsMainMenu from './AssistTools/MainMenu.vue'
 import ShutterMainMenu from './Exposure/ShutterMainMenu.vue'
@@ -61,6 +63,7 @@ export default {
   name: 'Main',
 
   components: {
+    shutter_release: ShutterReleaseMainMenu,
     input_audio: InputAudioMainMenu,
     assist_tools: AssistToolsMainMenu,
     shutter: ShutterMainMenu,

@@ -31,6 +31,16 @@ var Camera = {
       .catch((error) => { console.log(error) })
   },
 
+  ctrl_still(attribute, callback) {
+    axios.get(`${this.host_url()}/ctrl/still`, {
+      params: { action: attribute },
+    })
+      .then((response) => {
+        callback(response.data)
+      })
+      .catch((error) => { console.log(error) })
+  },
+
   host_url() {
     return this.url
   },
