@@ -12,4 +12,7 @@ sudo systemctl enable uglybox
 mkdir -p ~/.config/lxsession/LXDE-pi
 cp autostart ~/.config/lxsession/LXDE-pi
 
+sudo sed '/network/,/}/d' /etc/wpa_supplicant/wpa_supplicant.conf > /tmp/wpa_temp
+sudo mv /tmp/wpa_temp /etc/wpa_supplicant/wpa_supplicant.conf
+
 sudo shutdown -r now
