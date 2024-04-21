@@ -7,9 +7,11 @@
       </div>
       <div v-on:click="openMenu">
         <div v-bind:class="{ hidden : menuOpen }" class="text-xl">{{ store.value }}</div>
-        <ul v-bind:class="{ invisible : !menuOpen }" class="border-l-2 border-r-2 border-t-2 border-gray-500">
-          <li v-for="(option, index) in store.opts" :key="option" :value="index" v-on:click="selectOpt" v-bind:class="{ 'bg-yellow-600' : option === store.value }" class="text-xl border-b-2 border-gray-500 p-1">{{ option }}</li>
-        </ul>
+        <div class="flex flex-row">
+          <ul v-for="option_col in optionCols()" :key="option_col.index" v-bind:class="{ invisible : !menuOpen, 'border-l-2' : option_col.index === 0 }" class="w-24 min-w-max border-r-2 border-t-2 border-gray-500">
+            <li v-for="option in option_col.options" :key="option.index" :value="option.index" v-on:click="selectOpt" v-bind:class="{ 'bg-yellow-600' : option.option === store.value }" class="text-xl border-b-2 border-gray-500 p-1">{{ option.option }}</li>
+          </ul>
+        </div>
       </div>
       <div>
         <button v-on:click="increment()" class="flex content-start text-2xl bg-green-700 py-2 px-6 rounded">&#x25B7;</button>
@@ -68,6 +70,25 @@ export default {
 
     openMenu() {
       this.menuOpen = true
+    },
+
+    optionCols() {
+      var options = this.store.opts
+      var cols = Math.ceil(options.length / 9)
+      var rows = Math.ceil(options.length / cols)
+      var result = [...Array(cols).keys()].map(idx => {
+        return {
+          index: idx,
+          options: options.slice(idx * rows, (idx + 1) * rows).map((option, index) => {
+            return { option: option, index: (idx * rows) + index }
+          })
+        }
+      })
+      return result
+    },
+
+    firstCol(idx) {
+      return idx === 0
     },
   },
 
