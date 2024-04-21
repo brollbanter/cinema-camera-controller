@@ -26,6 +26,4 @@ var ImageStore = {
   },
 }
 
-ImageStore.initialize()
-
 export default ImageStore

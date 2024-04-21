@@ -23,5 +23,9 @@ export default {
       channels: InputAudioStore.state,
     }
   },
+
+  beforeMount() {
+    InputAudioStore.initialize()
+  },
 }
 </script>

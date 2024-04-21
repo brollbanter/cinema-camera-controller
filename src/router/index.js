@@ -9,6 +9,8 @@ import ModifyImage from '../views/Image/Modify.vue'
 import ModifyResolution from '../views/Resolution/Modify.vue'
 import ModifyWhiteBalance from '../views/WhiteBalance/Modify.vue'
 
+import Connect from '../views/Connect/Main.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -51,6 +53,11 @@ const routes = [
     path: '/modify_white_balance',
     name: 'ModifyWhiteBalance',
     component: ModifyWhiteBalance
+  },
+  {
+    path: '/connect',
+    name: 'Connect',
+    component: Connect
   },
 ]
 

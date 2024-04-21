@@ -23,6 +23,10 @@ export default {
     this.timer = setInterval(this.get_battery, 5000)
   },
 
+  destroyed() {
+    clearInterval(this.timer)
+  },
+
   methods: {
     get_battery() {
       Camera.ctrl_get('battery_voltage', (response) => {

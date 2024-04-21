@@ -15,6 +15,4 @@ var AssistToolsStore = {
   },
 }
 
-AssistToolsStore.initialize()
-
 export default AssistToolsStore

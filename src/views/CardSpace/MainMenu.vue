@@ -23,6 +23,10 @@ export default {
     this.timer = setInterval(this.get_remaining, 5000)
   },
 
+  destroyed() {
+    clearInterval(this.timer)
+  },
+
   methods: {
     get_remaining() {
       Camera.rec_get('remain', (response) => {

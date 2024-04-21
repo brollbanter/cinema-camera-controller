@@ -26,6 +26,4 @@ var FrameRateStore = {
   },
 }
 
-FrameRateStore.initialize()
-
 export default FrameRateStore

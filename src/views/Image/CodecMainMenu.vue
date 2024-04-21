@@ -18,5 +18,9 @@ export default {
       image: ImageStore.state,
     }
   },
+
+  beforeMount() {
+    ImageStore.initialize()
+  },
 }
 </script>

@@ -44,6 +44,4 @@ var ShutterStore = {
   },
 }
 
-ShutterStore.initialize()
-
 export default ShutterStore

@@ -18,5 +18,9 @@ export default {
       fps: FrameRateStore.state.fps,
     }
   },
+
+  beforeMount() {
+    FrameRateStore.initialize()
+  },
 }
 </script>

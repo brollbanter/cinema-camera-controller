@@ -18,5 +18,9 @@ export default {
       white_balance: WhiteBalanceStore.state,
     }
   },
+
+  beforeMount() {
+    WhiteBalanceStore.initialize()
+  },
 }
 </script>

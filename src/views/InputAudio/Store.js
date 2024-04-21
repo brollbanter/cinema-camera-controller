@@ -44,6 +44,4 @@ var InputAudioStore = {
   },
 }
 
-InputAudioStore.initialize()
-
 export default InputAudioStore

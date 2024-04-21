@@ -15,6 +15,4 @@ var WhiteBalanceStore = {
   },
 }
 
-WhiteBalanceStore.initialize()
-
 export default WhiteBalanceStore

@@ -15,6 +15,4 @@ var ResolutionStore = {
   },
 }
 
-ResolutionStore.initialize()
-
 export default ResolutionStore

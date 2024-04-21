@@ -18,5 +18,9 @@ export default {
       resolution: ResolutionStore.state,
     }
   },
+
+  beforeMount() {
+    ResolutionStore.initialize()
+  },
 }
 </script>
