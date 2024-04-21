@@ -1,7 +1,7 @@
 <template>
-  <router-link to="/modify_resolution">
+  <router-link to="/modify_resolution" class="bg-gray-800 py-4 px-4 rounded">
     <div class="flex flex-col space-y-2 text-center">
-      <h2>Resolution</h2>
+      <h2 class="font-bold text-xl">Resolution</h2>
       <div>{{ resolution.value }}</div>
     </div>
   </router-link>

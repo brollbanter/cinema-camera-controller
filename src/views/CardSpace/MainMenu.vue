@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col space-y-2 text-center">
-    <h2>Card Space</h2>
+  <div class="flex flex-col space-y-2 text-center bg-gray-800 py-4 px-4 rounded">
+    <h2 class="font-bold text-xl">Card Space</h2>
     <div>{{ card_space }} minutes</div>
   </div>
 </template>

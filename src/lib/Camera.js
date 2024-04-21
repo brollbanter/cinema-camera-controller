@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 var Camera = {
-  host_url: 'http://192.168.1.21:3000',
+  host_url: 'http://localhost:3000',
 
   ctrl_get(attribute, callback) {
     axios.get(this.host_url + '/ctrl/get', { params: { k: attribute }})

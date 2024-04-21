@@ -1,23 +1,23 @@
 <template>
   <div class="main_screen">
-    <div class="grid grid-cols-2 justify-items-center p-4">
+    <div class="grid grid-cols-2 justify-items-center p-2">
       <input_audio />
       <assist_tools />
     </div>
-    <div class="grid grid-cols-4 justify-items-center p-4">
+    <div class="grid grid-cols-4 justify-items-center p-2">
       <shutter />
       <iso />
       <iris />
       <end />
     </div>
-    <div class="grid grid-cols-5 justify-items-center p-4">
+    <div class="grid grid-cols-5 justify-items-center p-2">
       <fps />
       <vfr />
       <codec />
       <image_ />
       <resolution />
     </div>
-    <div class="grid grid-cols-3 justify-items-center p-4">
+    <div class="grid grid-cols-3 justify-items-center p-2">
       <card_space />
       <white_balance />
       <battery />

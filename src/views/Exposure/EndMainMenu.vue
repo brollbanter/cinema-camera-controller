@@ -1,7 +1,7 @@
 <template>
-  <router-link to="/modify_shutter">
+  <router-link to="/modify_shutter" class="bg-gray-800 py-4 px-4 rounded">
     <div class="flex flex-col space-y-2 text-center">
-      <h3>eND</h3>
+      <h3 class="font-bold text-xl">eND</h3>
       <div>{{end.value}}</div>
     </div>
   </router-link>
