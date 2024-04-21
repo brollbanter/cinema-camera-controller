@@ -14,13 +14,21 @@ export default {
   data() {
     return {
       card_space: 0,
+      timer: '',
     }
   },
 
   created() {
-    Camera.rec_get('remain', (response) => {
-      this.card_space = response.msg
-    })
+    this.get_remaining()
+    this.timer = setInterval(this.get_remaining, 5000)
+  },
+
+  methods: {
+    get_remaining() {
+      Camera.rec_get('remain', (response) => {
+        this.card_space = response.msg
+      })
+    },
   },
 }
 </script>

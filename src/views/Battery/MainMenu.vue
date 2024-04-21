@@ -14,13 +14,21 @@ export default {
   data() {
     return {
       voltage: 0.0,
+      timer: '',
     }
   },
 
   created() {
-    Camera.ctrl_get('battery_voltage', (response) => {
-      this.voltage = response.value / 10.0
-    })
+    this.get_battery()
+    this.timer = setInterval(this.get_battery, 5000)
+  },
+
+  methods: {
+    get_battery() {
+      Camera.ctrl_get('battery_voltage', (response) => {
+        this.voltage = response.value / 10.0
+      })
+    },
   },
 }
 </script>
