@@ -18,6 +18,14 @@ var Camera = {
       })
       .catch((error) => { console.log(error) })
   },
+
+  rec_get(attribute, callback) {
+    axios.get(this.host_url + '/ctrl/rec', { params: { action: attribute }})
+      .then((response) => {
+        callback(response.data)
+      })
+      .catch((error) => { console.log(error) })
+  },
 }
 
 export default Camera

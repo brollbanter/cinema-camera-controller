@@ -17,6 +17,11 @@
       <image_ />
       <div><h3>Resolution</h3></div>
     </div>
+    <div class="grid grid-cols-3 justify-items-center p-4">
+      <card_space />
+      <white_balance />
+      <battery />
+    </div>
   </div>
 </template>
 
@@ -29,6 +34,9 @@ import IrisMainMenu from './Exposure/IrisMainMenu'
 import EndMainMenu from './Exposure/EndMainMenu'
 import CodecMainMenu from './Image/CodecMainMenu'
 import ImageMainMenu from './Image/ImageMainMenu'
+import CardSpaceMainMenu from './CardSpace/MainMenu'
+import WhiteBalanceMainMenu from './WhiteBalance/MainMenu'
+import BatteryMainMenu from './Battery/MainMenu'
 
 export default {
   name: 'Main',
@@ -42,6 +50,9 @@ export default {
     end: EndMainMenu,
     codec: CodecMainMenu,
     image_: ImageMainMenu,
+    card_space: CardSpaceMainMenu,
+    white_balance: WhiteBalanceMainMenu,
+    battery: BatteryMainMenu,
   },
 }
 </script>
