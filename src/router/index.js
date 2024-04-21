@@ -4,8 +4,7 @@ import Home from '../views/Home.vue'
 import ModifyInputAudio from '../views/InputAudio/Modify.vue'
 import ModifyAssistTools from '../views/AssistTools/Modify.vue'
 import ModifyShutter from '../views/Exposure/Modify.vue'
-import ModifyFps from '../views/Fps/Modify.vue'
-import ModifyVfr from '../views/Vfr/Modify.vue'
+import ModifyFrameRate from '../views/FrameRate/Modify.vue'
 import ModifyImage from '../views/Image/Modify.vue'
 import ModifyResolution from '../views/Resolution/Modify.vue'
 import ModifyWhiteBalance from '../views/WhiteBalance/Modify.vue'
@@ -34,14 +33,9 @@ const routes = [
     component: ModifyShutter
   },
   {
-    path: '/modify_fps',
-    name: 'ModifyFps',
-    component: ModifyFps
-  },
-  {
-    path: '/modify_vfr',
-    name: 'ModifyVfr',
-    component: ModifyVfr
+    path: '/modify_frame_rate',
+    name: 'ModifyFrameRate',
+    component: ModifyFrameRate
   },
   {
     path: '/modify_image',

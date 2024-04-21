@@ -1,0 +1,12 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+
+@point-rpi
+@unclutter -idle 0.1
+
+@xset s off
+@xset s noblank
+@xset -dpms
+
+@/usr/bin/chromium-browser --check-for-update-interval=31536000 --incognito --kiosk http://localhost:3030
+#@/usr/bin/chromium-browser --check-for-update-interval=31536000 http://localhost:3030 --auto-open-devtools-for-tabs

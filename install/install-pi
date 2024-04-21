@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+sudo apt-get update
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get -y install nodejs point-rpi unclutter
+sudo npm install -g yarn
+yarn install
+
+sudo cp -f uglybox.service /lib/systemd/system
+sudo systemctl enable uglybox
+
+mkdir -p ~/.config/lxsession/LXDE-pi
+cp autostart ~/.config/lxsession/LXDE-pi
+
+sudo shutdown -r now

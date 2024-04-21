@@ -1,9 +1,15 @@
+import * as rax from 'retry-axios'
 import axios from 'axios'
+
+rax.attach();
 
 var Camera = {
 
   ctrl_get(attribute, callback) {
-    axios.get(this.host_url() + '/ctrl/get', { params: { k: attribute }})
+    axios.get(this.host_url() + '/ctrl/get', {
+      params: { k: attribute },
+      raxConfig: { retry: 10, noResponseRetries: 10, retryDelay: 1000 },
+    })
       .then((response) => {
         callback(response.data)
       })
@@ -19,7 +25,10 @@ var Camera = {
   },
 
   rec_get(attribute, callback) {
-    axios.get(this.host_url() + '/ctrl/rec', { params: { action: attribute }})
+    axios.get(this.host_url() + '/ctrl/rec', {
+      params: { action: attribute },
+      raxConfig: { retry: 10, noResponseRetries: 10, retryDelay: 1000 },
+    })
       .then((response) => {
         callback(response.data)
       })
@@ -30,7 +39,7 @@ var Camera = {
     if (process.env.VUE_APP_CAMERA_URL) {
       return process.env.VUE_APP_CAMERA_URL
     } else {
-      return 'http://localhost:3000'
+      return 'http://localhost:3030'
     }
   },
 }

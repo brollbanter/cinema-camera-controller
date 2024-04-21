@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/modify_fps">
+  <router-link to="/modify_frame_rate">
     <div class="flex flex-col space-y-2 text-center">
       <h2 class="font-bold text-xl">FPS</h2>
       <div>{{ fps.value }}</div>
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import FpsStore from './Store'
+import FrameRateStore from './Store'
 
 export default {
   name: 'FpsMainMenu',
 
   data() {
     return {
-      fps: FpsStore.state,
+      fps: FrameRateStore.state.fps,
     }
   },
 }

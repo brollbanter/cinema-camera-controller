@@ -1,0 +1,11 @@
+{
+  "name": "uglybox2-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
