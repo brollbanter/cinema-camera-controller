@@ -16,11 +16,11 @@ var InputAudioStore = {
   },
 
   get_gain(channel_id) {
-    Camera.ctrl_get(this.id_to_attribute(channel_id), function(response) {
+    Camera.ctrl_get(this.id_to_attribute(channel_id), (response) => {
       this.state[channel_id].value = response.value
       this.state[channel_id].max = response.max
       this.state[channel_id].min = response.min
-    }.bind(this))
+    })
   },
 
   get_left_gain() {
@@ -32,15 +32,15 @@ var InputAudioStore = {
   },
 
   increment(channel_id) {
-    Camera.ctrl_set(this.id_to_attribute(channel_id), this.state[channel_id].value + 1, function() {
+    Camera.ctrl_set(this.id_to_attribute(channel_id), this.state[channel_id].value + 1, () => {
       this.get_gain(channel_id)
-    }.bind(this))
+    })
   },
 
   decrement(channel_id) {
-    Camera.ctrl_set(this.id_to_attribute(channel_id), this.state[channel_id].value - 1, function() {
+    Camera.ctrl_set(this.id_to_attribute(channel_id), this.state[channel_id].value - 1, () => {
       this.get_gain(channel_id)
-    }.bind(this))
+    })
   },
 }
 

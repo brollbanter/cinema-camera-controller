@@ -58,12 +58,12 @@ export default {
     },
 
     set_value(value) {
-      Camera.ctrl_set(this.store.attribute, value, function() {
-        Camera.ctrl_get(this.store.attribute, function(response) {
+      Camera.ctrl_set(this.store.attribute, value, () => {
+        Camera.ctrl_get(this.store.attribute, (response) => {
           this.store.value = response.value
           this.store.opts = response.opts
-        }.bind(this))
-      }.bind(this))
+        })
+      })
     },
 
     openMenu() {

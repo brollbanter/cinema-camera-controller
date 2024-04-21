@@ -8,9 +8,9 @@ var AssistToolsStore = {
   },
 
   get_exposure() {
-    Camera.ctrl_get('assitool_exposure', function(response) {
+    Camera.ctrl_get('assitool_exposure', (response) => {
       this.state.value = response.value
-    }.bind(this))
+    })
   },
 }
 

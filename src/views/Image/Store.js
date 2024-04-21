@@ -12,17 +12,17 @@ var ImageStore = {
   },
 
   get_image_value() {
-    Camera.ctrl_get(this.state.image.attribute, function(response) {
+    Camera.ctrl_get(this.state.image.attribute, (response) => {
       this.state.image.value = response.value
       this.state.image.opts = response.opts
-    }.bind(this))
+    })
   },
 
   get_codec_value() {
-    Camera.ctrl_get(this.state.codec.attribute, function(response) {
+    Camera.ctrl_get(this.state.codec.attribute, (response) => {
       this.state.codec.value = response.value
       this.state.codec.opts = response.opts
-    }.bind(this))
+    })
   },
 }
 
