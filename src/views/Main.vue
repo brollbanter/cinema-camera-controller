@@ -4,6 +4,12 @@
       <input_audio />
       <assist_tools />
     </div>
+    <div class="grid grid-cols-4 justify-items-center p-4">
+      <shutter />
+      <iso />
+      <iris />
+      <end />
+    </div>
     <div class="grid grid-cols-5 justify-items-center p-4">
       <div><h3>FPS</h3></div>
       <div><h3>VFR</h3></div>
@@ -15,10 +21,14 @@
 </template>
 
 <script>
-import InputAudioMainMenu from './InputAudio/MainMenu.vue'
-import AssistToolsMainMenu from './AssistTools/MainMenu.vue'
-import CodecMainMenu from './Image/CodecMainMenu.vue'
-import ImageMainMenu from './Image/ImageMainMenu.vue'
+import InputAudioMainMenu from './InputAudio/MainMenu'
+import AssistToolsMainMenu from './AssistTools/MainMenu'
+import ShutterMainMenu from './Exposure/ShutterMainMenu'
+import IsoMainMenu from './Exposure/IsoMainMenu'
+import IrisMainMenu from './Exposure/IrisMainMenu'
+import EndMainMenu from './Exposure/EndMainMenu'
+import CodecMainMenu from './Image/CodecMainMenu'
+import ImageMainMenu from './Image/ImageMainMenu'
 
 export default {
   name: 'Main',
@@ -26,6 +36,10 @@ export default {
   components: {
     input_audio: InputAudioMainMenu,
     assist_tools: AssistToolsMainMenu,
+    shutter: ShutterMainMenu,
+    iso: IsoMainMenu,
+    iris: IrisMainMenu,
+    end: EndMainMenu,
     codec: CodecMainMenu,
     image_: ImageMainMenu,
   },

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ModifyInputAudio from '../views/InputAudio/Modify.vue'
 import ModifyAssistTools from '../views/AssistTools/Modify.vue'
+import ModifyShutter from '../views/Exposure/Modify.vue'
 import ModifyImage from '../views/Image/Modify.vue'
 
 Vue.use(VueRouter)
@@ -30,6 +31,11 @@ const routes = [
     path: '/modify_assist_tools',
     name: 'ModifyAssistTools',
     component: ModifyAssistTools,
+  },
+  {
+    path: '/modify_shutter',
+    name: 'ModifyShutter',
+    component: ModifyShutter
   },
   {
     path: '/modify_image',

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/modify_input_audio">
+  <router-link to="/modify_input_audio" class="bg-gray-800 py-4 px-4 rounded">
     <div class="flex flex-col space-y-2 text-center">
       <h2>Input Gain</h2>
       <div id="channels" class="flex flex-row space-x-4">

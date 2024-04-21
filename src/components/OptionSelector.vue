@@ -1,18 +1,18 @@
 <template>
   <div class="flex flex-col space-y-2">
-    <h2>{{ title }}</h2>
+    <h2 class="text-3xl font-bold">{{ title }}</h2>
     <div class="option-selector flex flex-row justify-center space-x-2">
       <div>
-        <button v-on:click="decrement()" class="flex content-start bg-green-500 py-1 px-4 rounded">&lt;</button>
+        <button v-on:click="decrement()" class="flex content-start text-2xl bg-green-700 py-2 px-6 rounded">&lt;</button>
       </div>
       <div v-on:click="openMenu">
-        <div v-bind:class="{ hidden : menuOpen }">{{ store.value }}</div>
+        <div v-bind:class="{ hidden : menuOpen }" class="text-2xl">{{ store.value }}</div>
         <ul v-bind:class="{ invisible : !menuOpen }" class="border-l-2 border-r-2 border-t-2 border-gray-500">
-          <li v-for="(option, index) in store.opts" :key="option" :value="index" v-on:click="selectOpt" v-bind:class="{ 'bg-yellow-600' : option === store.value }" class="border-b-2 border-gray-500 p-1">{{ option }}</li>
+          <li v-for="(option, index) in store.opts" :key="option" :value="index" v-on:click="selectOpt" v-bind:class="{ 'bg-yellow-600' : option === store.value }" class="text-xl border-b-2 border-gray-500 p-1">{{ option }}</li>
         </ul>
       </div>
       <div>
-        <button v-on:click="increment()" class="flex content-start bg-green-500 py-1 px-4 rounded">&gt;</button>
+        <button v-on:click="increment()" class="flex content-start text-2xl bg-green-700 py-2 px-6 rounded">&gt;</button>
       </div>
     </div>
   </div>
