@@ -7,7 +7,7 @@
       </div>
       <div class="flex flex-row-reverse" >
         <div class="flex flex-row justify-center items-center w-24 h-24 p-4">
-          <cog_icon size="3x"/>
+          <router-link to="/connect"><cog_icon size="3x"/></router-link>
         </div>
       </div>
     </div>

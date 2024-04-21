@@ -10,6 +10,7 @@ import ModifyResolution from '../views/Resolution/Modify.vue'
 import ModifyWhiteBalance from '../views/WhiteBalance/Modify.vue'
 
 import Connect from '../views/Connect/Main.vue'
+import SelectCameraAP from '../views/Connect/SelectCameraAP.vue'
 
 Vue.use(VueRouter)
 
@@ -58,6 +59,11 @@ const routes = [
     path: '/connect',
     name: 'Connect',
     component: Connect
+  },
+  {
+    path: '/select_camera_ap',
+    name: 'SelectCameraAP',
+    component: SelectCameraAP
   },
 ]
 
