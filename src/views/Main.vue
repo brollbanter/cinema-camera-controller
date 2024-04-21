@@ -8,7 +8,7 @@
       </div>
       <div class="flex flex-row-reverse" >
         <div class="flex flex-row justify-center items-center bg-gray-800 w-24 h-24 p-4">
-          <router-link to="/connect"><cog_icon class="h-16 w-16 fill-gray-400"/></router-link>
+          <router-link to="/settings"><cog_icon class="h-16 w-16 fill-gray-400"/></router-link>
         </div>
       </div>
     </div>

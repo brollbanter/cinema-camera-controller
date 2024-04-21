@@ -7,7 +7,7 @@ import ModifyFrameRate from '../views/FrameRate/Modify.vue'
 import ModifyImage from '../views/Image/Modify.vue'
 import ModifyResolution from '../views/Resolution/Modify.vue'
 import ModifyWhiteBalance from '../views/WhiteBalance/Modify.vue'
-
+import Settings from '../views/Settings/Main.vue'
 import Connect from '../views/Connect/Main.vue'
 import SelectCameraAP from '../views/Connect/SelectCameraAP.vue'
 
@@ -54,6 +54,11 @@ const router = createRouter({
       path: '/modify_white_balance',
       name: 'ModifyWhiteBalance',
       component: ModifyWhiteBalance
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
     },
     {
       path: '/connect',
