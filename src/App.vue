@@ -13,17 +13,16 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 
 <script lang="ts">
 //import { bus } from './main'
-
-const routeName = () => {
-  return useRoute().name
-}
-
 export default {
   name: 'App',
 
   methods: {
     closeMenu(event) {
       //bus.$emit('closeMenu', event)
+    },
+
+    routeName() {
+      return useRoute().name
     }
   },
 }

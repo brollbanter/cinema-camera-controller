@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+firefox --display=:0 --kiosk http://localhost:5173
