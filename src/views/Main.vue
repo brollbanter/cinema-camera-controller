@@ -6,8 +6,8 @@
         <assist_tools class="w-40 bg-gray-800 p-4 rounded" />
       </div>
       <div class="flex flex-row-reverse" >
-        <div class="flex flex-row justify-center items-center w-24 h-24 p-4">
-          <router-link to="/connect"><cog_icon size="3x"/></router-link>
+        <div class="flex flex-row justify-center items-center bg-gray-800 w-24 h-24 p-4">
+          <router-link to="/connect"><cog_icon class="h-16 w-16 fill-gray-400"/></router-link>
         </div>
       </div>
     </div>
@@ -33,22 +33,29 @@
 </template>
 
 <script>
-import InputAudioMainMenu from './InputAudio/MainMenu'
-import AssistToolsMainMenu from './AssistTools/MainMenu'
-import ShutterMainMenu from './Exposure/ShutterMainMenu'
-import IsoMainMenu from './Exposure/IsoMainMenu'
-import IrisMainMenu from './Exposure/IrisMainMenu'
-import EndMainMenu from './Exposure/EndMainMenu'
-import FpsMainMenu from './FrameRate/FpsMainMenu'
-import VfrMainMenu from './FrameRate/VfrMainMenu'
-import CodecMainMenu from './Image/CodecMainMenu'
-import ImageMainMenu from './Image/ImageMainMenu'
-import ResolutionMainMenu from './Resolution/MainMenu'
-import CardSpaceMainMenu from './CardSpace/MainMenu'
-import WhiteBalanceMainMenu from './WhiteBalance/MainMenu'
-import BatteryMainMenu from './Battery/MainMenu'
-import { CogIcon } from '@vue-hero-icons/solid'
-import Camera from '../lib/Camera'
+import InputAudioMainMenu from './InputAudio/MainMenu.vue'
+import AssistToolsMainMenu from './AssistTools/MainMenu.vue'
+import ShutterMainMenu from './Exposure/ShutterMainMenu.vue'
+import IsoMainMenu from './Exposure/IsoMainMenu.vue'
+import IrisMainMenu from './Exposure/IrisMainMenu.vue'
+import EndMainMenu from './Exposure/EndMainMenu.vue'
+import FpsMainMenu from './FrameRate/FpsMainMenu.vue'
+import VfrMainMenu from './FrameRate/VfrMainMenu.vue'
+import CodecMainMenu from './Image/CodecMainMenu.vue'
+import ImageMainMenu from './Image/ImageMainMenu.vue'
+import ResolutionMainMenu from './Resolution/MainMenu.vue'
+import CardSpaceMainMenu from './CardSpace/MainMenu.vue'
+import WhiteBalanceMainMenu from './WhiteBalance/MainMenu.vue'
+import BatteryMainMenu from './Battery/MainMenu.vue'
+import Camera from '../lib/Camera.js'
+import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
+import { useImageStore} from './Image/Store.js'
+import { useAssistToolsStore } from './AssistTools/Store.js'
+import { useInputAudioStore } from './InputAudio/Store.js'
+import { useShutterStore } from './Exposure/Store.js'
+import { useFrameRateStore } from './FrameRate/Store.js'
+import { useResolutionStore } from './Resolution/Store.js'
+import { useWhiteBalanceStore } from './WhiteBalance/Store.js'
 
 export default {
   name: 'Main',
@@ -68,12 +75,20 @@ export default {
     card_space: CardSpaceMainMenu,
     white_balance: WhiteBalanceMainMenu,
     battery: BatteryMainMenu,
-    cog_icon: CogIcon,
+    cog_icon: Cog6ToothIcon,
   },
 
   created() {
     if (Camera.url === '') {
       this.$router.push({ name: 'Connect' })
+    } else {
+      useAssistToolsStore().initialize()
+      useImageStore().initialize()
+      useInputAudioStore().initialize()
+      useShutterStore().initialize()
+      useFrameRateStore().initialize()
+      useResolutionStore().initialize()
+      useWhiteBalanceStore().initialize()
     }
   },
 }

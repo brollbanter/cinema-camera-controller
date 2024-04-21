@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import AssistToolsStore from './Store'
+import { useAssistToolsStore } from './Store'
 
 export default {
   name: 'AssistToolsMainMenu',
 
-  data() {
-    return {
-      exposure: AssistToolsStore.state,
-    }
-  },
-  
-  beforeMount() {
-    AssistToolsStore.initialize()
+  setup() {
+    return { exposure: useAssistToolsStore() }
   },
 }
 </script>

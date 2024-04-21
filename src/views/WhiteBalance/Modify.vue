@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
-import WhiteBalanceStore from './Store'
+import OptionSelector from '../../components/OptionSelector.vue'
+import { useWhiteBalanceStore } from './Store'
 
 export default {
   name: 'ModifyWhiteBalance',
@@ -15,10 +15,8 @@ export default {
     option_selector: OptionSelector,
   },
 
-  data() {
-    return {
-      white_balance: WhiteBalanceStore.state,
-    }
+  setup() {
+    return { white_balance: useWhiteBalanceStore() }
   },
 }
 </script>

@@ -1,18 +1,19 @@
 import Camera from '../../lib/Camera'
+import { defineStore } from 'pinia'
 
-var WhiteBalanceStore = {
-  state: { value: '-', opts: [], attribute: 'wb' },
+export const useWhiteBalanceStore = defineStore('whiteBalance', {
+  state: () => ({ value: '-', opts: [], attribute: 'wb', }),
 
-  initialize() {
-    this.get_white_balance()
+  actions: {
+    initialize() {
+      this.get_white_balance()
+    },
+
+    get_white_balance() {
+      Camera.ctrl_get(this.attribute, (response) => {
+        this.value = response.value
+        this.opts = response.opts
+      })
+    },
   },
-
-  get_white_balance() {
-    Camera.ctrl_get(this.state.attribute, (response) => {
-      this.state.value = response.value
-      this.state.opts = response.opts
-    })
-  },
-}
-
-export default WhiteBalanceStore
+})

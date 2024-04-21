@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import FrameRateStore from './Store'
+import { useFrameRateStore } from './Store'
 
 export default {
   name: 'FpsMainMenu',
 
-  data() {
-    return {
-      fps: FrameRateStore.state.fps,
-    }
-  },
-
-  beforeMount() {
-    FrameRateStore.initialize()
+  setup() {
+    return { fps: useFrameRateStore().fps }
   },
 }
 </script>

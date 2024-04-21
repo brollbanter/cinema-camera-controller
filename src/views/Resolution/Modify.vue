@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
-import ResolutionStore from './Store'
+import OptionSelector from '../../components/OptionSelector.vue'
+import { useResolutionStore } from './Store'
 
 export default {
   name: 'ModifyResolution',
@@ -15,10 +15,8 @@ export default {
     option_selector: OptionSelector,
   },
 
-  data() {
-    return {
-      resolution: ResolutionStore.state,
-    }
+  setup() {
+    return { resolution: useResolutionStore() }
   },
 }
 </script>

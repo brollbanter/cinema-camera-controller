@@ -1,21 +1,29 @@
+<script setup lang="ts">
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+</script>
+
 <template>
   <div id="app" v-on:click="closeMenu" class="h-screen bg-black text-white">
-    <div v-if="this.$route.name != 'Home'" class="flex justify-end">
-      <router-link to="/" class="text-2xl py-1 px-4 bg-green-700">Back</router-link>
+    <div v-if="routeName() != 'Home'" class="flex justify-end">
+      <RouterLink to="/" class="text-2xl py-4 px-8 bg-green-700">Back</RouterLink>
     </div>
-    <router-view/>
+    <RouterView/>
   </div>
 </template>
 
-<script>
-import { bus } from './main'
+<script lang="ts">
+//import { bus } from './main'
+
+const routeName = () => {
+  return useRoute().name
+}
 
 export default {
   name: 'App',
 
   methods: {
     closeMenu(event) {
-      bus.$emit('closeMenu', event)
+      //bus.$emit('closeMenu', event)
     }
   },
 }

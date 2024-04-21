@@ -6,20 +6,18 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
-import ImageStore from './Store'
+import OptionSelector from '../../components/OptionSelector.vue'
+import { useImageStore } from './Store'
 
 export default {
   name: 'ModifyImage',
 
-  components: {
-    option_selector: OptionSelector,
+  setup() {
+    return { image: useImageStore() }
   },
 
-  data() {
-    return {
-      image: ImageStore.state,
-    }
+  components: {
+    option_selector: OptionSelector,
   },
 }
 </script>

@@ -1,29 +1,30 @@
 import Camera from '../../lib/Camera'
+import { defineStore } from 'pinia'
 
-var ImageStore = {
-  state: {
+export const useImageStore = defineStore('image', {
+  state: () => ({
     image: { value: '-', opts: [], attribute: 'lut' },
     codec: { value: '-', opts: [], attribute: 'video_encoder' },
-  },
+  }),
 
-  initialize() {
-    this.get_image_value()
-    this.get_codec_value()
-  },
+  actions: {
+    initialize() {
+      this.get_image_value()
+      this.get_codec_value()
+    },
 
-  get_image_value() {
-    Camera.ctrl_get(this.state.image.attribute, (response) => {
-      this.state.image.value = response.value
-      this.state.image.opts = response.opts
-    })
-  },
+    get_image_value() {
+      Camera.ctrl_get(this.image.attribute, (response) => {
+        this.image.value = response.value
+        this.image.opts = response.opts
+      })
+    },
 
-  get_codec_value() {
-    Camera.ctrl_get(this.state.codec.attribute, (response) => {
-      this.state.codec.value = response.value
-      this.state.codec.opts = response.opts
-    })
+    get_codec_value() {
+      Camera.ctrl_get(this.codec.attribute, (response) => {
+        this.codec.value = response.value
+        this.codec.opts = response.opts
+      })
+    },
   },
-}
-
-export default ImageStore
+})

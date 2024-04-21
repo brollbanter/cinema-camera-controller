@@ -23,7 +23,7 @@ export default {
     this.timer = setInterval(this.get_battery, 5000)
   },
 
-  destroyed() {
+  unmounted() {
     clearInterval(this.timer)
   },
 

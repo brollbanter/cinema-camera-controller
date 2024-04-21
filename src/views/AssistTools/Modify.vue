@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
-import AssistToolsStore from './Store'
+import OptionSelector from '../../components/OptionSelector.vue'
+import { useAssistToolsStore } from './Store'
 
 export default {
   name: 'ModifyAssistTools',
@@ -15,10 +15,8 @@ export default {
     option_selector: OptionSelector,
   },
 
-  data() {
-    return {
-      assist_tools: AssistToolsStore.state,
-    }
+  setup() {
+    return { assist_tools: useAssistToolsStore() }
   },
 }
 </script>

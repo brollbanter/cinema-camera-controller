@@ -13,19 +13,13 @@
 </template>
 
 <script>
-import InputAudioStore from './Store'
+import { useInputAudioStore } from './Store'
 
 export default {
   name: 'InputAudioMainMenu',
 
-  data() {
-    return {
-      channels: InputAudioStore.state,
-    }
-  },
-
-  beforeMount() {
-    InputAudioStore.initialize()
+  setup() {
+    return { channels: useInputAudioStore().$state }
   },
 }
 </script>

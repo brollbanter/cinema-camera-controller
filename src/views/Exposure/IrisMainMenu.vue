@@ -8,15 +8,13 @@
 </template>
 
 <script>
-import ShutterStore from './Store'
+import { useShutterStore } from './Store'
 
 export default {
   name: 'ShutterMainMenu',
 
-  data() {
-    return {
-      iris: ShutterStore.state.iris,
-    }
+  setup() {
+    return { iris: useShutterStore().iris }
   },
 }
 </script>

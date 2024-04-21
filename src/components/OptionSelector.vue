@@ -22,7 +22,7 @@
 
 <script>
 import Camera from '../lib/Camera'
-import { bus } from '../main'
+//import { bus } from '../main'
 
 export default {
   name: 'OptionSelector',
@@ -93,12 +93,14 @@ export default {
   },
 
   created() {
+    /*
     bus.$on('closeMenu', (event) => {
       var optionSelectors = this.$el.getElementsByClassName('option-selector')[0].children
       if (![...optionSelectors].some((elem) => elem.contains(event.target)) && this.menuOpen) {
         this.menuOpen = false
       }
     })
+    */
   },
 }
 </script>

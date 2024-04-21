@@ -8,15 +8,13 @@
 </template>
 
 <script>
-import FrameRateStore from './Store'
+import { useFrameRateStore } from './Store'
 
 export default {
   name: 'VfrMainMenu',
 
-  data() {
-    return {
-      vfr: FrameRateStore.state.vfr,
-    }
+  setup() {
+    return { vfr: useFrameRateStore().vfr }
   },
 }
 </script>

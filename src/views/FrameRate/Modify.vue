@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
-import FrameRateStore from './Store'
+import OptionSelector from '../../components/OptionSelector.vue'
+import { useFrameRateStore } from './Store'
 
 export default {
   name: 'ModifyFrameRate',
@@ -16,10 +16,8 @@ export default {
     option_selector: OptionSelector,
   },
 
-  data() {
-    return {
-      frame_rate: FrameRateStore.state,
-    }
+  setup() {
+    return { frame_rate: useFrameRateStore() }
   },
 }
 </script>

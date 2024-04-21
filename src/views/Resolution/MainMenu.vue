@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import ResolutionStore from './Store'
+import { useResolutionStore } from './Store'
 
 export default {
   name: 'ResolutionMainMenu',
 
-  data() {
-    return {
-      resolution: ResolutionStore.state,
-    }
-  },
-
-  beforeMount() {
-    ResolutionStore.initialize()
+  setup() {
+    return { resolution: useResolutionStore() }
   },
 }
 </script>

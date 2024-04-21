@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import VerticalOptSelect from '../../components/VerticalOptSelect'
-import ShutterStore from './Store'
+import VerticalOptSelect from '../../components/VerticalOptSelect.vue'
+import { useShutterStore } from './Store'
 
 export default {
   name: 'ModifyImage',
@@ -18,10 +18,8 @@ export default {
     option_selector: VerticalOptSelect,
   },
 
-  data() {
-    return {
-      shutter: ShutterStore.state,
-    }
+  setup() {
+    return { shutter: useShutterStore().$state }
   },
 }
 </script>

@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import WhiteBalanceStore from './Store'
+import { useWhiteBalanceStore } from './Store'
 
 export default {
   name: 'WhiteBalanceSpaceMainMenu',
 
-  data() {
-    return {
-      white_balance: WhiteBalanceStore.state,
-    }
-  },
-
-  beforeMount() {
-    WhiteBalanceStore.initialize()
+  setup() {
+    return { white_balance: useWhiteBalanceStore() }
   },
 }
 </script>

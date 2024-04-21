@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import ImageStore from './Store'
+import { useImageStore } from './Store'
 
 export default {
   name: 'CodecMainMenu',
 
-  data() {
-    return {
-      image: ImageStore.state,
-    }
-  },
-
-  beforeMount() {
-    ImageStore.initialize()
+  setup() {
+    return { image: useImageStore() }
   },
 }
 </script>

@@ -8,15 +8,13 @@
 </template>
 
 <script>
-import ImageStore from './Store'
+import { useImageStore } from './Store'
 
 export default {
   name: 'ImageMainMenu',
 
-  data() {
-    return {
-      image: ImageStore.state,
-    }
+  setup() {
+    return { image: useImageStore() }
   },
 }
 </script>
