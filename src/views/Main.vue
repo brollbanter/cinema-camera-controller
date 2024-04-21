@@ -1,26 +1,33 @@
 <template>
   <div class="main_screen">
-    <div class="grid grid-cols-2 justify-items-center p-2">
-      <input_audio />
-      <assist_tools />
+    <div class="grid grid-cols-5">
+      <div class="col-span-4 grid grid-cols-2 justify-items-center p-2">
+        <input_audio class="w-40 bg-gray-800 p-4 rounded" />
+        <assist_tools class="w-40 bg-gray-800 p-4 rounded" />
+      </div>
+      <div class="flex flex-row-reverse p-2" >
+        <div class="flex flex-row justify-center items-center w-24 h-24 bg-gray-800 p-4 rounded text-4xl">
+          &#x2699;
+        </div>
+      </div>
     </div>
     <div class="grid grid-cols-4 justify-items-center p-2">
-      <shutter />
-      <iso />
-      <iris />
-      <end />
+      <shutter class="w-40 bg-gray-800 p-4 rounded" />
+      <iso class="w-40 bg-gray-800 p-4 rounded" />
+      <iris class="w-40 bg-gray-800 p-4 rounded" />
+      <end class="w-40 bg-gray-800 p-4 rounded" />
     </div>
     <div class="grid grid-cols-5 justify-items-center p-2">
-      <fps />
-      <vfr />
-      <codec />
-      <image_ />
-      <resolution />
+      <fps class="w-32 bg-gray-800 p-4 rounded" />
+      <vfr class="w-32 bg-gray-800 p-4 rounded" />
+      <codec class="w-32 bg-gray-800 p-4 rounded" />
+      <image_ class="w-32 bg-gray-800 p-4 rounded" />
+      <resolution class="w-32 bg-gray-800 p-4 rounded" />
     </div>
     <div class="grid grid-cols-3 justify-items-center p-2">
-      <card_space />
-      <white_balance />
-      <battery />
+      <card_space class="w-48 bg-gray-800 p-4 rounded" />
+      <white_balance class="w-48 bg-gray-800 p-4 rounded" />
+      <battery class="w-48 bg-gray-800 p-4 rounded" />
     </div>
   </div>
 </template>

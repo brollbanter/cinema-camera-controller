@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-2 text-center bg-gray-800 py-4 px-4 rounded">
+  <div class="flex flex-col space-y-2 text-center">
     <h2 class="font-bold text-xl">Battery</h2>
     <div>{{ voltage }} V</div>
   </div>

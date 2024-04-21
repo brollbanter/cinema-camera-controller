@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/modify_image" class="bg-gray-800 py-4 px-4 rounded">
+  <router-link to="/modify_image">
     <div class="flex flex-col space-y-2 text-center">
       <h3 class="font-bold text-xl">Image</h3>
       <div>{{image.image.value}}</div>
