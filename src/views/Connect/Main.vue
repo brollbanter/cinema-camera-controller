@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-if="!failed_to_connect">
-      <div>Connecting to camera: {{ wifi_ssid }}</div>
+    <div v-if="!failed_to_connect" class="flex flex-col items-center">
+      <div class="w-9/12 text-4xl text-center">Connecting to camera: {{ wifi_ssid }}</div>
     </div>
-    <div v-else>
-      Failed to connect.
-      <router-link to='/select_camera_ap'>Reconnect</router-link>
+    <div v-else class="flex flex-col items-center">
+      <div class="text-4xl text-center">Failed to connect.</div>
+      <router-link to='/select_camera_ap' class="text-3xl bg-gray-600 mt-16 py-4 px-8 rounded">Reconnect</router-link>
     </div>
   </div>
 </template>
