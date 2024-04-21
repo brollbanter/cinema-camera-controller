@@ -4,9 +4,9 @@ import router from './router'
 
 import './assets/styles/app.css'
 
-//import axios from 'axios'
-
 Vue.config.productionTip = false
+
+export const bus = new Vue()
 
 new Vue({
   router,

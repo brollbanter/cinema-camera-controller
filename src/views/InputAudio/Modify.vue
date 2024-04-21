@@ -1,5 +1,5 @@
 <template>
-  <div class="adjust_input_audio text-center p-8">
+  <div class="text-center p-8">
     <h2>Audio Menu</h2>
     <div id="channels" class="grid grid-cols-2">
       <div v-for="channel in channels" v-bind:key="channel.id" class="channel space-y-2">
