@@ -1,8 +1,7 @@
 <template>
   <div>
     <div v-if="!failed_to_connect">
-      <h1>Connecting to Camera</h1>
-      <div>SSID: {{ wifi_ssid }}</div>
+      <div>Connecting to camera: {{ wifi_ssid }}</div>
     </div>
     <div v-else>
       Failed to connect.
@@ -13,6 +12,7 @@
 
 <script>
 import axios from 'axios'
+import Camera from '../../lib/Camera'
 
 export default {
   name: 'Connect',
@@ -32,11 +32,11 @@ export default {
     get_connection_status() {
       axios.get('/api/connection_status')
         .then((response) => {
-          console.log(response.data)
           this.wifi_ssid = response.data.wifi_ssid
           if (response.data.wifi === 'unconfigured') {
             this.$router.push({ name: 'SelectCameraAP' })
           } else if (response.data.wifi === 'connected') {
+            Camera.url = response.data.camera_url
             this.$router.push({ name: 'Home' })
           } else if (response.data.wifi === 'connecting') {
             setTimeout(this.get_connection_status, 1000)

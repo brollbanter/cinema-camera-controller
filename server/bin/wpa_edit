@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+SSID=$1
+
+sudo sed '/network/,/}/d' /etc/wpa_supplicant/wpa_supplicant.conf > /tmp/wpa_temp
+printf "network={\nssid=\"$SSID\"\npsk=\"12345678\"\n}\n" >> /tmp/wpa_temp
+sudo mv /tmp/wpa_temp /etc/wpa_supplicant/wpa_supplicant.conf
+
+wpa_cli -i wlan0 reconfigure
+
+while iwgetid
+do
+  sleep 1
+done

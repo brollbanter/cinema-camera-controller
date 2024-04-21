@@ -48,6 +48,7 @@ import CardSpaceMainMenu from './CardSpace/MainMenu'
 import WhiteBalanceMainMenu from './WhiteBalance/MainMenu'
 import BatteryMainMenu from './Battery/MainMenu'
 import { CogIcon } from '@vue-hero-icons/solid'
+import Camera from '../lib/Camera'
 
 export default {
   name: 'Main',
@@ -68,6 +69,12 @@ export default {
     white_balance: WhiteBalanceMainMenu,
     battery: BatteryMainMenu,
     cog_icon: CogIcon,
+  },
+
+  created() {
+    if (Camera.url === '') {
+      this.$router.push({ name: 'Connect' })
+    }
   },
 }
 </script>
