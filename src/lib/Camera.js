@@ -12,7 +12,7 @@ var Camera = {
   },
 
   ctrl_set(attribute, value, callback) {
-    axios.get(this.host_url + '/ctrl/set', { params: { [attribute]: value }})
+    axios.get(this.host_url + `/ctrl/set?${attribute}=${value}`)
       .then((response) => {
         callback(response.data)
       })
