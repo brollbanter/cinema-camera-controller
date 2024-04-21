@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+sudo apt-get update
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get -y install nodejs point-rpi unclutter
+sudo npm install -g yarn
+yarn install
+
+sudo cp -f uglybox.service /lib/systemd/system
+sudo systemctl enable uglybox
+
+mkdir -p ~/.config/lxsession/LXDE-pi
+cp autostart ~/.config/lxsession/LXDE-pi
+
+sudo sed '/network/,/}/d' /etc/wpa_supplicant/wpa_supplicant.conf > /tmp/wpa_temp
+sudo mv /tmp/wpa_temp /etc/wpa_supplicant/wpa_supplicant.conf
+
+sudo shutdown -r now

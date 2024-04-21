@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Start UI
+Exec=/home/USER/c3/software/bin/start_ui
+Type=Application
+Terminal=false

@@ -1,0 +1,20 @@
+# systemd service file to start Ugly box Vue server
+
+[Unit]
+Description=Ugly box Vue server
+Wants=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/uglybox
+
+Nice=5
+ExecStart=yarn serve
+KillSignal=SIGINT
+Restart=on-failure
+SyslogIdentifier=uglybox
+
+[Install]
+WantedBy=multi-user.target
