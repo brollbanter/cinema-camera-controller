@@ -1,10 +1,9 @@
 import axios from 'axios'
 
 var Camera = {
-  host_url: 'http://localhost:3000',
 
   ctrl_get(attribute, callback) {
-    axios.get(this.host_url + '/ctrl/get', { params: { k: attribute }})
+    axios.get(this.host_url() + '/ctrl/get', { params: { k: attribute }})
       .then((response) => {
         callback(response.data)
       })
@@ -12,7 +11,7 @@ var Camera = {
   },
 
   ctrl_set(attribute, value, callback) {
-    axios.get(this.host_url + `/ctrl/set?${attribute}=${value}`)
+    axios.get(this.host_url() + `/ctrl/set?${attribute}=${value}`)
       .then((response) => {
         callback(response.data)
       })
@@ -20,11 +19,19 @@ var Camera = {
   },
 
   rec_get(attribute, callback) {
-    axios.get(this.host_url + '/ctrl/rec', { params: { action: attribute }})
+    axios.get(this.host_url() + '/ctrl/rec', { params: { action: attribute }})
       .then((response) => {
         callback(response.data)
       })
       .catch((error) => { console.log(error) })
+  },
+
+  host_url() {
+    if (process.env.VUE_APP_CAMERA_URL) {
+      return process.env.VUE_APP_CAMERA_URL
+    } else {
+      return 'http://localhost:3000'
+    }
   },
 }
 

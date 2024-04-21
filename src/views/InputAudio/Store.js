@@ -2,8 +2,8 @@ import Camera from '../../lib/Camera'
 
 var InputAudioStore = {
   state: [
-    { id: 0, title: 'Left', value: '- db', max: 0, min: 0 },
-    { id: 1, title: 'Right', value: '- db', max: 0, min: 0 },
+    { id: 0, title: 'Left', value: '-', max: 0, min: 0 },
+    { id: 1, title: 'Right', value: '-', max: 0, min: 0 },
   ],
 
   initialize() {
