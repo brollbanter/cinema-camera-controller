@@ -1,12 +1,15 @@
 <template>
-  <div class="flex flex-col space-y-2 text-center">
-    <h2>Assist Tools</h2>
-    <div>{{exposure.value}}</div>
-  </div>
+  <router-link to="/modify_assist_tools">
+    <div class="flex flex-col space-y-2 text-center">
+      <h2>Assist Tools</h2>
+      <div>{{exposure.value}}</div>
+    </div>
+  </router-link>
 </template>
 
 <script>
-import AssistToolsStore from './Store.js'
+import AssistToolsStore from './Store'
+
 export default {
   name: 'AssistToolsMainMenu',
 

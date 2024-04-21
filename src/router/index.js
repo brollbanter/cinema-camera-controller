@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ModifyInputAudio from '../views/InputAudio/Modify.vue'
+import ModifyAssistTools from '../views/AssistTools/Modify.vue'
 import ModifyImage from '../views/Image/Modify.vue'
 
 Vue.use(VueRouter)
@@ -24,6 +25,11 @@ const routes = [
     path: '/modify_input_audio',
     name: 'ModifyInputAudio',
     component: ModifyInputAudio,
+  },
+  {
+    path: '/modify_assist_tools',
+    name: 'ModifyAssistTools',
+    component: ModifyAssistTools,
   },
   {
     path: '/modify_image',

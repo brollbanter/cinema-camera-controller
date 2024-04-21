@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import InputAudioStore from './Store.js'
+import InputAudioStore from './Store'
 
 export default {
   name: 'InputAudioMainMenu',
