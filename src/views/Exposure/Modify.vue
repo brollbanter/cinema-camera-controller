@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import OptionSelector from '../../components/OptionSelector'
+import VerticalOptSelect from '../../components/VerticalOptSelect'
 import ShutterStore from './Store'
 
 export default {
   name: 'ModifyImage',
 
   components: {
-    option_selector: OptionSelector,
+    option_selector: VerticalOptSelect,
   },
 
   data() {
