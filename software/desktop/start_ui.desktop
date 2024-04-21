@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Start UI
-Exec=/home/peter/uglybox2/bin/start_ui
+Exec=/home/USER/c3/software/bin/start_ui
 Type=Application
 Terminal=false
