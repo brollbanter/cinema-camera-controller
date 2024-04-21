@@ -5,9 +5,9 @@
         <input_audio class="w-40 bg-gray-800 p-4 rounded" />
         <assist_tools class="w-40 bg-gray-800 p-4 rounded" />
       </div>
-      <div class="flex flex-row-reverse p-2" >
-        <div class="flex flex-row justify-center items-center w-24 h-24 bg-gray-800 p-4 rounded text-4xl">
-          &#x2699;
+      <div class="flex flex-row-reverse" >
+        <div class="flex flex-row justify-center items-center w-24 h-24 p-4">
+          <cog_icon size="3x"/>
         </div>
       </div>
     </div>
@@ -47,6 +47,7 @@ import ResolutionMainMenu from './Resolution/MainMenu'
 import CardSpaceMainMenu from './CardSpace/MainMenu'
 import WhiteBalanceMainMenu from './WhiteBalance/MainMenu'
 import BatteryMainMenu from './Battery/MainMenu'
+import { CogIcon } from '@vue-hero-icons/solid'
 
 export default {
   name: 'Main',
@@ -66,6 +67,7 @@ export default {
     card_space: CardSpaceMainMenu,
     white_balance: WhiteBalanceMainMenu,
     battery: BatteryMainMenu,
+    cog_icon: CogIcon,
   },
 }
 </script>
