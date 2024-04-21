@@ -17,6 +17,7 @@ import InputAudioStore from './Store.js'
 
 export default {
   name: 'InputAudioMainMenu',
+
   data() {
     return {
       channels: InputAudioStore.state,

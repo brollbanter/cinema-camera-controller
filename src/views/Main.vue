@@ -14,6 +14,7 @@ import InputAudioMainMenu from './InputAudio/MainMenu.vue'
 
 export default {
   name: 'Main',
+
   components: {
     input_audio: InputAudioMainMenu,
   },

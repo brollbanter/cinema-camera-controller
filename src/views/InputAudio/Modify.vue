@@ -18,15 +18,18 @@ import InputAudioStore from './Store.js'
 
 export default {
   name: 'ModifyInputAudio',
+
   data() {
     return {
       channels: InputAudioStore.state,
     }
   },
+
   methods: {
     increment(channel_id) {
       InputAudioStore.increment(channel_id)
     },
+
     decrement(channel_id) {
       InputAudioStore.decrement(channel_id)
     },
