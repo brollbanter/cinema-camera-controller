@@ -11,11 +11,11 @@
       <end />
     </div>
     <div class="grid grid-cols-5 justify-items-center p-4">
-      <div><h3>FPS</h3></div>
-      <div><h3>VFR</h3></div>
+      <fps />
+      <vfr />
       <codec />
       <image_ />
-      <div><h3>Resolution</h3></div>
+      <resolution />
     </div>
     <div class="grid grid-cols-3 justify-items-center p-4">
       <card_space />
@@ -32,8 +32,11 @@ import ShutterMainMenu from './Exposure/ShutterMainMenu'
 import IsoMainMenu from './Exposure/IsoMainMenu'
 import IrisMainMenu from './Exposure/IrisMainMenu'
 import EndMainMenu from './Exposure/EndMainMenu'
+import FpsMainMenu from './Fps/MainMenu'
+import VfrMainMenu from './Vfr/MainMenu'
 import CodecMainMenu from './Image/CodecMainMenu'
 import ImageMainMenu from './Image/ImageMainMenu'
+import ResolutionMainMenu from './Resolution/MainMenu'
 import CardSpaceMainMenu from './CardSpace/MainMenu'
 import WhiteBalanceMainMenu from './WhiteBalance/MainMenu'
 import BatteryMainMenu from './Battery/MainMenu'
@@ -48,8 +51,11 @@ export default {
     iso: IsoMainMenu,
     iris: IrisMainMenu,
     end: EndMainMenu,
+    fps: FpsMainMenu,
+    vfr: VfrMainMenu,
     codec: CodecMainMenu,
     image_: ImageMainMenu,
+    resolution: ResolutionMainMenu,
     card_space: CardSpaceMainMenu,
     white_balance: WhiteBalanceMainMenu,
     battery: BatteryMainMenu,
