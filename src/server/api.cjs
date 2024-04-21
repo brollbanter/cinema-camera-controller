@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var fs = require('fs')
 var child_process = require('child_process')
+var i2c = require('i2c-bus')
 require('dotenv-flow').config()
 
 function get_camera_state() {
@@ -82,6 +83,33 @@ router.post('/camera_ssid', (req, res) => {
   }
 
   res.send("ok")
+})
+
+const UPS_ADDRESS = 0x42
+const BUS_VOLTAGE_REG = 2
+const CALIBRATION_REG = 5
+const CALIBRATION_VALUE = 4096
+const bus = i2c.openSync(1)
+
+router.get('/controller_battery', (req, res) => {
+  const buffer = Buffer.alloc(2)
+  buffer[0] = CALIBRATION_VALUE >> 8
+  buffer[1] = CALIBRATION_VALUE & 0xFF
+  bus.writeI2cBlockSync(UPS_ADDRESS, CALIBRATION_REG, 2, buffer)
+
+  bus.readI2cBlockSync(UPS_ADDRESS, BUS_VOLTAGE_REG, 2, buffer)
+
+  const value = buffer[0] * 256 + buffer[1]
+  const voltage = (value >> 3) * 0.004
+  var percent = Math.round((voltage - 6) / 2.4 * 100)
+  if (percent > 100) {
+    percent = 100
+  }
+  if (percent < 0) {
+    percent = 0
+  }
+
+  res.send({ value, voltage, percent })
 })
 
 router.get('/exit_ui', (_req, res) => {

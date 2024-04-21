@@ -43,16 +43,16 @@ export default {
         .then((response) => {
           this.cameraSSIDs = response.data
         })
-        .catch((error) => { console.log(error) })
+        .catch((error) => { console.error(error) })
     },
 
     select_camera(camera_ssid) {
       this.SSIDSelected = true
-      axios.post('/api/camera_ssid', { ssid: camera_ssid }).
-        then(() => {
+      axios.post('/api/camera_ssid', { ssid: camera_ssid })
+        .then(() => {
           this.$router.push({ name: 'Connect' })
         })
-        .catch((error) => { console.log(error) })
+        .catch((error) => { console.error(error) })
     },
   },
 }
