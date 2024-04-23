@@ -3,7 +3,7 @@
 
 How to build your own wireless touchscreen cinema camera controller, or at least how I made the first version of a DIY simple settings controller for my Z Cam cinema camera that suited my needs at the time. 
 
-The intention of this write up is so that you can treat it like a one time <a href="https://www.kiwico.com/eureka" target="_blank" rel="noopener noreferrer">Eureka Crate from KiwiCo</a> build focused for filmmakers. Although the software side did need some basic knowledge, I document everything I did, and was able to reproduce my results twice by following the instructions. 
+The intention of this write up is so that you can treat it like a one time KiwiCo Crate build focused for filmmakers. Although the software side did need some basic knowledge, I document everything I did, and was able to reproduce my results twice by following the instructions. 
 
 
 
@@ -92,7 +92,7 @@ ssh in with the user account you created
 To ssh in windows Powershell
 1. Launch Windows Powershell 
 2. `ssh USER@HOSTNAME.local`
-> from my example picture earlier it would be `ssh pi@raspberry.local` 
+> from my example picture earlier it would be `ssh pi@raspberrypi.local` 
 3. yes to fingerprint if needed
 4. enter USER password
 > these are all the setting you set while preparing the OS image in the general tab
