@@ -99,9 +99,9 @@ To ssh in windows Powershell
 
 	
 	
-`sudo apt update`
+	sudo apt update
 	
-`sudo apt upgrade`
+	sudo apt upgrade
 	
 y to continue
 	
