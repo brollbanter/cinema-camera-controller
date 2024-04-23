@@ -100,7 +100,8 @@ To ssh in windows Powershell
 	
 	
 	sudo apt update
-	
+
+ 
 	sudo apt upgrade
 	
 y to continue
@@ -116,54 +117,54 @@ SSH in after the reboot
 Using <a href="https://nodejs.org/en/download/package-manager" target="_blank" rel="noopener noreferrer">this</a> as my current reference 
 >A  note to new tinkerers, I cite my source here because you should NEVER curl | bash without knowing what the script does, in this case it is how the official documentation distributes it, and so generally safe to do so.
 
-`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 
 use new ssh connection 
 
-`nvm install 20`
+	nvm install 20
 
 Install the programs needed
 
-` sudo apt-get -y install unclutter firefox-esr` 
+	sudo apt-get -y install unclutter firefox-esr 
 
  enable i2c 
 
-`sudo raspi-config`
+	sudo raspi-config	
 
 interface options --> I2c select --> Finish
 
-`npm install -g yarn`
+	npm install -g yarn
 
 Copy the open source software from our <a href="https://github.com/brollbanter/cinema-camera-controller" target="_blank" rel="noopener">Github Repo</a>
 
 
-`git clone https://github.com/brollbanter/cinema-camera-controller.git c3`
+	git clone https://github.com/brollbanter/cinema-camera-controller.git c3	
 >the c3 at the end places the files from our repo into a directory called c3 on your device. This is mainly so we don't have to type cinema-camera-controller and keeps the folder names cleaner. It is also used in scripts our program uses 
 
-` cd c3/software`
+	cd c3/software
 
-`yarn install`
+	yarn install
 
 create camera_state.json 
 
-`nano camera_state.json `
+	nano camera_state.json 
 
 Paste the following and write out and exit 
-`{"wifi":"connected","wifi_ssid":"any","camera_url":"http://10.98.33.1"}`
+	{"wifi":"connected","wifi_ssid":"any","camera_url":"http://10.98.33.1"}
 
 make sure z cam is on at this point if you plan on connecting to test
 
-`cd ~/c3/software/desktop`
+	cd ~/c3/software/desktop
 
-`cp start_server.desktop start_ui.desktop ~/Desktop/`
+	cp start_server.desktop start_ui.desktop ~/Desktop/
 >copies the two pre-made desktop shortcuts to the Desktop
 
-`nano ~/Desktop/start_server.desktop`
+	nano ~/Desktop/start_server.desktop
 
 >Change USER to your pi install's username and write out
 
- `nano ~/Desktop/start_ui.desktop`
+ 	nano ~/Desktop/start_ui.desktop
  
  
 >Again change USER to your pi install's username and write out
