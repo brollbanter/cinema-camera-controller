@@ -42,7 +42,7 @@ If you don't own a 3D printer or have a friend that will lend you time on theirs
 
 We will be waiting to assemble all the hardware until after preparing the OS, but it is possible to insert the micro SD card if the hardware stack is assembled, just use extreme care.
 
-We selected a Pi 3 due to the low power power demands, however when designing our case, we made it with compatible with Raspberry pi 3 through 5 port cutouts. 
+We selected a Pi 3 due to the low power power demands, however when designing our case, we made it compatible with Raspberry pi 3 through 5 port cutouts. 
 
 ## Software
 
